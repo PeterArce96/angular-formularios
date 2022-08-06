@@ -21,5 +21,8 @@ export class CrearClienteComponent implements OnInit {
       localidad: new FormControl('')
     })
   }
+  enviarCliente(): void{
+    console.log(this.form.value);
+  }
 
 }

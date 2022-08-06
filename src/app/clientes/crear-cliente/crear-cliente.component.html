@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <form [formGroup]="form">
+        <form [formGroup]="form" (ngSubmit)="enviarCliente()">
             <div class="row">
                 <div class="col-100">
                     <label>Nombre Cliente
@@ -30,14 +30,20 @@
                     <input type="text" formControlName="localidad">
                 </div>
             </div>
-            <pre>
-                Estado pristine: {{form.controls?.['cif']?.pristine}}
+            <div class="row">
+                <div class="col-100 flex j-end">
+                    <button [disabled]="form.invalid" type="submit">Enviar</button>
+                </div>
+            </div>
+            <!-- <pre>
+                Estado valid todo el formulario: {{form.valid}}
+                <!-- Estado valid: {{form.controls?.['cif']?.pristine}}
                 Estado dirty: {{form.controls?.['cif']?.dirty}}
                 Estado touched: {{form.controls?.['cif']?.touched}}
                 Estado untouched: {{form.controls?.['cif']?.untouched}}
                 Estado valid: {{form.controls?.['cif']?.valid}}
-                Estado invalid: {{form.controls?.['cif']?.invalid}}
-            </pre>
+                Estado invalid: {{form.controls?.['cif']?.invalid}} -->
+            <!-- </pre> -->
         </form>
     </div>
 </div>
