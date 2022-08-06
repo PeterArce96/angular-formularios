@@ -9,7 +9,10 @@
             </div>
             <div class="row">
                 <div class="col-100">
-                    <label>CIF</label>
+                    <label>
+                        CIF
+                        <span *ngIf="form.controls?.['cif']?.pristine">Introduzca el CIF</span>
+                    </label>
                     <input type="text" formControlName="cif">
                 </div>
             </div>
@@ -25,7 +28,14 @@
                     <input type="text" formControlName="localidad">
                 </div>
             </div>
-            <pre>{{form.value | json}}</pre>
+            <pre>
+                Estado pristine: {{form.controls?.['cif']?.pristine}}
+                Estado dirty: {{form.controls?.['cif']?.dirty}}
+                Estado touched: {{form.controls?.['cif']?.touched}}
+                Estado untouched: {{form.controls?.['cif']?.untouched}}
+                Estado valid: {{form.controls?.['cif']?.valid}}
+                Estado valid: {{form.controls?.['cif']?.invalid}}
+            </pre>
         </form>
     </div>
 </div>
