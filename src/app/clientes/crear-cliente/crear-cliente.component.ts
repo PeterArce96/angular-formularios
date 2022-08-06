@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-crear-cliente',
@@ -15,8 +15,8 @@ export class CrearClienteComponent implements OnInit {
   // ngOnInit --> cuando el DOM esté cargado
   ngOnInit(): void {
     this.form = new FormGroup({
-      nombre: new FormControl(''),
-      cif: new FormControl(''),
+      nombre: new FormControl('', [Validators.required]),
+      cif: new FormControl('',[Validators.required, Validators.minLength(9)]),
       direccion: new FormControl(''),
       localidad: new FormControl('')
     })
